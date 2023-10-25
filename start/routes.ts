@@ -19,6 +19,7 @@
 */
 
 import Route from '@ioc:Adonis/Core/Route'
+import AdminsController from 'App/Controllers/Http/AdminsController'
 import TodoController from 'App/Controllers/Http/TodosController'
 import UserController from 'App/Controllers/Http/UsersController'
 
@@ -29,6 +30,12 @@ Route.get('/', async ({ view }) => {
 Route.get('/dashboard', async ({ view }) => {
   return view.render('main')
 })
+
+Route.put('/edit/:id', AdminsController.editUser)
+
+Route.put('/edit/status/:id', AdminsController.editUserStatus)
+
+Route.delete('/delete/:id', AdminsController.deleteUser)
 
 Route.get('/users', UserController.getUsers)
 
