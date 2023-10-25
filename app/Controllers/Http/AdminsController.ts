@@ -11,7 +11,7 @@ export default new class AdminsController {
 
             if (user) {
                 user.email = newEmail;
-                await user.save();
+                await user.save()
 
                 return response.status(200).json({ message: 'User email updated successfully' });
             } else {
